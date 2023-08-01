@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package eosio.yield.types.v1;
+
+message Actions {
+  repeated RewardsLog rewardslogs = 1;
+}
+
+message RewardsLog {
+  string protocol = 1;         // Name
+  string category = 2;         // Name
+  int32 period = 3;            // TimePointSec
+  uint32 period_interval = 4;  // Uint32
+  string tvl = 5;              // Asset
+  string usd = 6;              // Asset
+  string rewards = 7;          // Asset
+  string balance = 8;          // Asset
+}

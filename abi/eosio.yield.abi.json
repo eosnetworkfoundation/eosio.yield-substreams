@@ -1,0 +1,604 @@
+{
+  "account_name": "eosio.yield",
+  "abi": {
+    "version": "eosio::abi/1.2",
+    "structs": [
+      {
+        "name": "approve",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          }
+        ]
+      },
+      {
+        "name": "claim",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "receiver",
+            "type": "name?"
+          },
+          {
+            "name": "evm_receiver",
+            "type": "string?"
+          }
+        ]
+      },
+      {
+        "name": "claimlog",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "category",
+            "type": "name"
+          },
+          {
+            "name": "receiver",
+            "type": "name"
+          },
+          {
+            "name": "evm_receiver",
+            "type": "string"
+          },
+          {
+            "name": "claimed",
+            "type": "asset"
+          },
+          {
+            "name": "balance",
+            "type": "asset"
+          }
+        ]
+      },
+      {
+        "name": "config_row",
+        "base": "",
+        "fields": [
+          {
+            "name": "annual_rate",
+            "type": "uint16"
+          },
+          {
+            "name": "min_tvl_report",
+            "type": "asset"
+          },
+          {
+            "name": "max_tvl_report",
+            "type": "asset"
+          },
+          {
+            "name": "rewards",
+            "type": "extended_symbol"
+          },
+          {
+            "name": "oracle_contract",
+            "type": "name"
+          },
+          {
+            "name": "admin_contract",
+            "type": "name"
+          }
+        ]
+      },
+      {
+        "name": "contractslog",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "status",
+            "type": "name"
+          },
+          {
+            "name": "contracts",
+            "type": "name[]"
+          },
+          {
+            "name": "evm",
+            "type": "string[]"
+          }
+        ]
+      },
+      {
+        "name": "createlog",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "status",
+            "type": "name"
+          },
+          {
+            "name": "category",
+            "type": "name"
+          },
+          {
+            "name": "metadata",
+            "type": "pair_name_string[]"
+          }
+        ]
+      },
+      {
+        "name": "deny",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          }
+        ]
+      },
+      {
+        "name": "eraselog",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          }
+        ]
+      },
+      {
+        "name": "extended_symbol",
+        "base": "",
+        "fields": [
+          {
+            "name": "sym",
+            "type": "symbol"
+          },
+          {
+            "name": "contract",
+            "type": "name"
+          }
+        ]
+      },
+      {
+        "name": "init",
+        "base": "",
+        "fields": [
+          {
+            "name": "rewards",
+            "type": "extended_symbol"
+          },
+          {
+            "name": "oracle_contract",
+            "type": "name"
+          },
+          {
+            "name": "admin_contract",
+            "type": "name"
+          }
+        ]
+      },
+      {
+        "name": "metadatalog",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "status",
+            "type": "name"
+          },
+          {
+            "name": "category",
+            "type": "name"
+          },
+          {
+            "name": "metadata",
+            "type": "pair_name_string[]"
+          }
+        ]
+      },
+      {
+        "name": "pair_name_string",
+        "base": "",
+        "fields": [
+          {
+            "name": "first",
+            "type": "name"
+          },
+          {
+            "name": "second",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "protocols_row",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "status",
+            "type": "name"
+          },
+          {
+            "name": "category",
+            "type": "name"
+          },
+          {
+            "name": "contracts",
+            "type": "name[]"
+          },
+          {
+            "name": "evm_contracts",
+            "type": "string[]"
+          },
+          {
+            "name": "tvl",
+            "type": "asset"
+          },
+          {
+            "name": "usd",
+            "type": "asset"
+          },
+          {
+            "name": "balance",
+            "type": "extended_asset"
+          },
+          {
+            "name": "metadata",
+            "type": "pair_name_string[]"
+          },
+          {
+            "name": "created_at",
+            "type": "time_point_sec"
+          },
+          {
+            "name": "updated_at",
+            "type": "time_point_sec"
+          },
+          {
+            "name": "claimed_at",
+            "type": "time_point_sec"
+          },
+          {
+            "name": "period_at",
+            "type": "time_point_sec"
+          }
+        ]
+      },
+      {
+        "name": "regprotocol",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "category",
+            "type": "name"
+          },
+          {
+            "name": "metadata",
+            "type": "pair_name_string[]"
+          }
+        ]
+      },
+      {
+        "name": "report",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "period",
+            "type": "time_point_sec"
+          },
+          {
+            "name": "period_interval",
+            "type": "uint32"
+          },
+          {
+            "name": "tvl",
+            "type": "asset"
+          },
+          {
+            "name": "usd",
+            "type": "asset"
+          }
+        ]
+      },
+      {
+        "name": "rewardslog",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "category",
+            "type": "name"
+          },
+          {
+            "name": "period",
+            "type": "time_point_sec"
+          },
+          {
+            "name": "period_interval",
+            "type": "uint32"
+          },
+          {
+            "name": "tvl",
+            "type": "asset"
+          },
+          {
+            "name": "usd",
+            "type": "asset"
+          },
+          {
+            "name": "rewards",
+            "type": "asset"
+          },
+          {
+            "name": "balance",
+            "type": "asset"
+          }
+        ]
+      },
+      {
+        "name": "setcategory",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "category",
+            "type": "name"
+          }
+        ]
+      },
+      {
+        "name": "setcontracts",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "contracts",
+            "type": "name[]"
+          },
+          {
+            "name": "evm_contracts",
+            "type": "string[]"
+          }
+        ]
+      },
+      {
+        "name": "setmetadata",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "metadata",
+            "type": "pair_name_string[]"
+          }
+        ]
+      },
+      {
+        "name": "setmetakey",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "key",
+            "type": "name"
+          },
+          {
+            "name": "value",
+            "type": "string?"
+          }
+        ]
+      },
+      {
+        "name": "setrate",
+        "base": "",
+        "fields": [
+          {
+            "name": "annual_rate",
+            "type": "int16?"
+          },
+          {
+            "name": "min_tvl_report",
+            "type": "asset?"
+          },
+          {
+            "name": "max_tvl_report",
+            "type": "asset?"
+          }
+        ]
+      },
+      {
+        "name": "state_row",
+        "base": "",
+        "fields": [
+          {
+            "name": "active_protocols",
+            "type": "name[]"
+          }
+        ]
+      },
+      {
+        "name": "statuslog",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          },
+          {
+            "name": "status",
+            "type": "name"
+          }
+        ]
+      },
+      {
+        "name": "unregister",
+        "base": "",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "name"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "name": "approve",
+        "type": "approve",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Approve\nsummary: 'Approves the {{protocol}} protocol for the Yield+ rewards program.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the administrator account. It will approve the {{protocol}} protocol for the Yield+ rewards program."
+      },
+      {
+        "name": "claim",
+        "type": "claim",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Claim\nsummary: 'Claims the Yield+ rewards for the {{protocol}} protocol.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the {{protocol}} protocol account. It will claim all rewards earned by the {{protocol}} protocol.\n\n{{#if_has_value receiver}}The rewards will be sent to the {{receiver}} account. {{/if_has_value}}"
+      },
+      {
+        "name": "claimlog",
+        "type": "claimlog",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Claim Log\nsummary: 'Generates a log each time Yield+ rewards are claimed.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the Yield+ contract self account. It will generate a log that the rewards for the {{protocol}} {{category}} protocol were claimed in the amount of {{claimed}}\n{{#if_has_value receiver}} by the account {{receiver}}\n{{/if_has_value}}."
+      },
+      {
+        "name": "contractslog",
+        "type": "contractslog",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Contracts Log\nsummary: 'Generates a log when a protocol's contracts are modified.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the Yield+ contract self account. It generates a log when a protocol's contracts have been modified. It will report the {{protocol}} protocol contracts as using the EOS contract(s) {{contracts.eos}} and the EVM contract(s) {{contracts.evm}}."
+      },
+      {
+        "name": "createlog",
+        "type": "createlog",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Create Log\nsummary: 'Generates a log when a protocol is created.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the Yield+ contract self account. It generates a log when a protocol is created. It will report the {{protocol}} protocol as created with its metadata.\n\u003c!--- {{#with metadata}}\n  {{#each key}}\n    {{this.key}} : {{this.value}} \u003c/br\u003e\n  {{/each}}\n{{/with}}\n--\u003e."
+      },
+      {
+        "name": "deny",
+        "type": "deny",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Deny\nsummary: 'Denies the {{protocol}} protocol for the Yield+ rewards program.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the administrator account. It will deny the {{protocol}} protocol for the Yield+ rewards program."
+      },
+      {
+        "name": "eraselog",
+        "type": "eraselog",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Erase Log\nsummary: 'Generates a log when a protocol is erased.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the Yield+ contract self account. It generates a log when a protocol is erased. It will report that the {{protocol}} protocol has been erased."
+      },
+      {
+        "name": "init",
+        "type": "init",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: init\nsummary: 'Initialize the rewards contract'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis can only be called by the Yield+ contract permission. It initializes the contract with the {{oracle_contract}} oracle and the {{admin_contract}} administrator. It will use the {{rewards.sym}} token at the contract {{rewards.contract}} for rewards."
+      },
+      {
+        "name": "metadatalog",
+        "type": "metadatalog",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Metadata Log\nsummary: 'Generates a log when a protocol's metadata is modified.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the Yield+ contract self account. It generates a log when a protocol's metadata has been modified. It will record that the {{protocol}} protocol has updated its metadata.\n\n\u003c!--- {{#with metadata}}\n  {{#each key}}\n    {{this.key}} : {{this.value}} \u003c/br\u003e\n  {{/each}}\n{{/with}}\n--\u003e"
+      },
+      {
+        "name": "regprotocol",
+        "type": "regprotocol",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Register Protocol\nsummary: 'Register the {{protocol}} protocol.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the {{protocol}} account. It will register the {{protocol}} protocol with its metadata.\n\u003c!--- {{#with metadata}}\n  {{#each key}}\n    {{this.key}} : {{this.value}} \u003c/br\u003e\n  {{/each}}\n{{/with}}\n--\u003e"
+      },
+      {
+        "name": "report",
+        "type": "report",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Report\nsummary: 'Generates a report of the current TVL from the {{protocol}} protocol.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the oracle contract account. It will report the TVL of the {{protocol}} protocol at the time of {{period}}. Average TVL will be reported as {{tvl}} EOS and ${{usd}} USD."
+      },
+      {
+        "name": "rewardslog",
+        "type": "rewardslog",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Rewards Log\nsummary: 'Generates a log when rewards are generated from reports.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the Yield+ contract self account. It generates a log when rewards are allocated. It will record a reward of {{rewards}} based on an EOS TVL of {{tvl}} and a USD TVL of {{usd}} for the {{period_interval}}-second period ending at {{period}} for the {{protocol}} {{category}} protocol. The protocol's claimable balance is now {{balance}}."
+      },
+      {
+        "name": "setcategory",
+        "type": "setcategory",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Set Category\nsummary: 'Sets the category of the {{protocol}} protocol.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the administrator account. It will set the category of the {{protocol}} protocol to {{category}}."
+      },
+      {
+        "name": "setcontracts",
+        "type": "setcontracts",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Set Contracts\nsummary: 'Sets the smart contracts for the {{protocol}} protocol.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action requires the permissions of either the administrator contract or both the {{protocol}} account and the {{contracts}} accounts. It will set the EOS contracts for the {{protocol}} protocol as {{contracts}}."
+      },
+      {
+        "name": "setmetadata",
+        "type": "setmetadata",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Set Metadata\nsummary: 'Set the metadata for the {{protocol}} protocol.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the {{protocol}} account or the Yield+ administrator account. It will set the metadata for the {{protocol}} protocol.\n\n\u003c!--- {{#with metadata}}\n  {{#each key}}\n    {{this.key}} : {{this.value}} \u003c/br\u003e\n  {{/each}}\n{{/with}}\n--\u003e"
+      },
+      {
+        "name": "setmetakey",
+        "type": "setmetakey",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Set Meta Key\nsummary: 'Set the {{key}} metadata key to {{value}}.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the {{protocol}} account or the administrator account. It will set a metadata key-value pair for the {{protocol}} protocol with a key of {{key}} and a value of {{value}}."
+      },
+      {
+        "name": "setrate",
+        "type": "setrate",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Set rate\nsummary: 'Set TVL rewards rate at {{annual_rate}} basis points.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis can only be called by the contract permission. It will set the reward rate at {{annual_rate}} basis points with a minimum TVL of {{min_tvl_report}} and a maximum TVL of {{max_tvl_report}}."
+      },
+      {
+        "name": "statuslog",
+        "type": "statuslog",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Status Log\nsummary: 'Generates a log when a protocol's status is modified.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the Yield+ contract self account. It generates a log when a protocol's status has been modified between pending, approved, or denied. It will report the {{protocol}} protocol status as {{status}}."
+      },
+      {
+        "name": "unregister",
+        "type": "unregister",
+        "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Unregister\nsummary: 'Unregister the {{protocol}} protocol.'\nicon: https://gateway.pinata.cloud/ipfs/QmSPLWbpUttHQqd4gPnPKBGE6XWy6PricPgfns9LXoUjdk#88016c23a1ed3af668f50353523ba29d086a8d3a460340b6e53add24588e5c5c\n---\n\nThis action can only be called by the {{protocol}} account. It will unregister the {{protocol}} protocol from the Yield+ Rewards program."
+      }
+    ],
+    "tables": [
+      {
+        "name": "config",
+        "index_type": "i64",
+        "type": "config_row"
+      },
+      {
+        "name": "protocols",
+        "index_type": "i64",
+        "type": "protocols_row"
+      },
+      {
+        "name": "state",
+        "index_type": "i64",
+        "type": "state_row"
+      }
+    ],
+    "ricardian_clauses": [
+      {
+        "id": "Yield+ Rewards",
+        "body": "## Overview\n\nYield+ is a Rewards system that incentivizes DeFi protocols to retain long-term TVL within their application.\n\nYield+ 是一个奖励系统，它激励 DeFi 协议在其应用程序中保留长期 TVL。\n\nYield+는 DeFi 프로토콜이 애플리케이션 내에서 장기간 TVL을 유지하도록 장려하는 보상 시스템입니다."
+      }
+    ]
+  }
+}
