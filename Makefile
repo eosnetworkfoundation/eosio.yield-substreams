@@ -15,7 +15,7 @@ build:
 
 .PHONY: protogen
 protogen:
-	substreams protogen --exclude-paths sf/substreams,google
+	substreams protogen --exclude-paths sf/substreams,google,sf/antelope
 
 .PHONY: pack
 pack:
@@ -31,8 +31,8 @@ info:
 
 .PHONY: run
 run:
-	substreams run -e eos.firehose.eosnation.io:9001 prom_out -s 230078212 -t 230088212 -o jsonl --production-mode
+	substreams run -e eos.firehose.eosnation.io:9001 prom_out -s 320526207 -t +1000 -o jsonl --production-mode
 
 .PHONY: gui
 gui:
-	substreams gui -e eos.firehose.eosnation.io:9001 prom_out -s 230078212 -t 230088212 --production-mode
+	substreams gui -e eos.firehose.eosnation.io:9001 prom_out -s 320526207 -t +10000 --production-mode

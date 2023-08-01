@@ -1,13 +1,19 @@
-use crate::{pb::eosio::r#yield::types::v1::{Actions, RewardsLog}, abi::Rewardslog};
+use crate::{pb::eosio::r#yield::v1::{Actions, RewardsLog}, abi::actions::Rewardslog};
 
 #[substreams::handlers::map]
 fn map_actions(block: substreams_antelope::Block) -> Result<Actions, substreams::errors::Error> {
     Ok(Actions {
         rewardslogs: block.actions::<Rewardslog>(&["eosio.yield"])
             .map(|(action, trx)| RewardsLog {
+                // trx
+                trx_id: trx.transaction_id.to_string(),
+                block_num: trx.block_num,
+                timestamp: trx.block_time.clone().unwrap().seconds,
+
+                // action
                 protocol: action.protocol,
                 category: action.category,
-                period: 0,
+                period: action.period,
                 period_interval: action.period_interval,
                 tvl: action.tvl,
                 usd: action.usd,
