@@ -4,6 +4,7 @@ use crate::{pb::eosio::r#yield::v1::{Actions, RewardsLog}, abi::actions::Rewards
 fn map_actions(block: substreams_antelope::Block) -> Result<Actions, substreams::errors::Error> {
     Ok(Actions {
         rewardslogs: block.actions::<Rewardslog>(&["eosio.yield"])
+            .filter(|(_action, trx) | trx.receiver == "eosio.yield")
             .map(|(action, trx)| RewardsLog {
                 // trx
                 trx_id: trx.transaction_id.to_string(),
