@@ -1,0 +1,27 @@
+name: Substreams CLI
+on:
+    release:
+        types: [ published ]
+
+permissions:
+    contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: supplypike/setup-bin@v3
+        with:
+          uri: 'https://github.com/streamingfast/substreams/releases/download/1.1.10/substreams_linux_x86_64.tar.gz'
+          name: 'substreams'
+          version: '1.1.10'
+
+      - name: Compile WASM
+        run: make
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            *.spkg
